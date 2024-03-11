@@ -1,7 +1,7 @@
 import React from 'react'
 import './Navbar.css'
 import menu_icon from '../../assets/menu.png'
-import logo from '../../assets/webcasting_merck_com_portal.png'
+import logo from '../../assets/merck-logo.svg'
 import search_icon from '../../assets/search.png'
 import upload_icon from '../../assets/upload.png'
 import more_icon from '../../assets/more.png'
@@ -29,7 +29,6 @@ const Navbar = ({ setSidebar }) => {
                 </div>
             </div>
             <div className="nav-right flex-div">
-                <img src={upload_icon} alt="" />
                 <img src={more_icon} alt="" />
                 <img src={notification_icon} alt="" />
                 <img src={jack_img} alt="" className="user-icon" />
