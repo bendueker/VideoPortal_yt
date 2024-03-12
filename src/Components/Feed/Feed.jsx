@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import './Feed.css'
 import { Link } from 'react-router-dom'
 
-import { dataWC } from '../../data-WC'
+import { dataWC } from '../../data-WC' 
 import moment from 'moment'
 
 const Feed = ({category}) => {
@@ -31,7 +31,7 @@ const Feed = ({category}) => {
         {myData && myData.map((item, index) => {
             return (
                 <Link key={index} to={`video/${item.EventGrouping}/${item.EventKey}`} className="card">
-                    <img src={item.IconImage} alt="" />
+                    <img src={item.IconImage} alt="" crossorigin="anonymous"/>
                     <h2>{item.Description}</h2>
                     <p>{" "+moment(item.CreatedOnDate).fromNow()}</p>
                 </Link>
