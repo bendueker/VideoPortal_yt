@@ -5,31 +5,22 @@ import { Link } from 'react-router-dom'
 import { dataWC } from '../../data-WC' 
 import moment from 'moment'
 
-const Feed = ({category}) => {
+const Feed = () => {
 
-    const setData => () {
+    const [dataWC,setData] = useState([]);
 
+    const fetchData = async ()=>{
+        const videoList_url = `https://api.onlinexperiences.com/scripts/Server.nxp?LASCmd=AI:4;F:APIUTILS!50540&APIUserAuthCode=Friakiables1IesladroaspoaxoUth&APIUserCredentials=swiuthoe3tiet0iUcHiarlaFroutho&OpCodeList=EEL&ShowKey=38077&OutputFormat=J`;
+        await fetch(videoList_url).then((response)=>response.json()).then((data)=>setData(data.APIResults.OpCodeResults[0].Results[0]))
     }
 
-
+    useEffect(()=>{
+        fetchData();
+    },null)
     
 
-    let myData = dataWC.APIResults.OpCodeResults[0].Results;
+    let myData = dataWC;
 
-     const fetchData = async ()=>{
-        const videoList_url = `https://api.onlinexperiences.com/scripts/Server.nxp?LASCmd=AI:4;F:APIUTILS!50540&APIUserAuthCode=Friakiables1IesladroaspoaxoUth&APIUserCredentials=swiuthoe3tiet0iUcHiarlaFroutho&OpCodeList=EEL&ShowKey=38077&OutputFormat=J`;
-        const opts = {
-            mode: 'no-cors'
-          }
-
-
-            
-          //fetch('http://ip-api.com/json', { method: "GET", mode: 'cors', headers: { 'Content-Type': 'application/json',}}).then(response => response.json()) 
-        await fetch(videoList_url).then((response)=>response.json()).then((data)=>setData(data.APIResults.OpCodeResults[0].Results[0]))
-    } 
-
-     useEffect(()=>{
-    },[category])
 
   return (
    <div className='feed'>
