@@ -7,11 +7,16 @@ import moment from 'moment'
 
 const Feed = ({category}) => {
 
+    const setData => () {
+
+    }
+
+
+    
 
     let myData = dataWC.APIResults.OpCodeResults[0].Results;
 
-/*     const fetchData = async ()=>{
-        //const videoList_url = `https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&maxResults=50&regionCode=US&videoCategoryId=${category}&key=${API_KEY}`;
+     const fetchData = async ()=>{
         const videoList_url = `https://api.onlinexperiences.com/scripts/Server.nxp?LASCmd=AI:4;F:APIUTILS!50540&APIUserAuthCode=Friakiables1IesladroaspoaxoUth&APIUserCredentials=swiuthoe3tiet0iUcHiarlaFroutho&OpCodeList=EEL&ShowKey=38077&OutputFormat=J`;
         const opts = {
             mode: 'no-cors'
@@ -20,11 +25,11 @@ const Feed = ({category}) => {
 
             
           //fetch('http://ip-api.com/json', { method: "GET", mode: 'cors', headers: { 'Content-Type': 'application/json',}}).then(response => response.json()) 
-        //await fetch(videoList_url,{ method: "GET", mode: 'no-cors', headers: { 'Content-Type': 'application/json',}}).then((response)=>response.json()).then((data)=>setData(data.APIResults.OpCodeResults[0].Results[0]))
-    } */
+        await fetch(videoList_url).then((response)=>response.json()).then((data)=>setData(data.APIResults.OpCodeResults[0].Results[0]))
+    } 
 
-/*     useEffect(()=>{
-    },[category]) */
+     useEffect(()=>{
+    },[category])
 
   return (
    <div className='feed'>
