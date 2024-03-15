@@ -1,7 +1,5 @@
     customHeaders:
       - pattern: '**'
         headers:
-          - key: Access-Control-Allow-Origin
-            value: '*'
-          - key: Access-Control-Allow-Methods
+          - key: 'Access-Control-Allow-Origin'
             value: '*'
